@@ -6,7 +6,7 @@
     <th>Source</th>
   </tr>
   {{#each archives as |archive|}}
-    {{archive-line archive=archive}}
+    {{archive-line archive=archive delete-archive=(action 'delete' archive) }}
   {{/each}}
 </table>
 
