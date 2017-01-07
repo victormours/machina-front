@@ -3,5 +3,5 @@
 {{#each model.subjects as |subject|}}
   {{episode-subject subject=subject}}
 {{/each}}
-<button {{action 'addSubject' model}}>Ajouter un sujet</button>
+<button type="button" class="button" {{action 'addSubject' model}}>Ajouter un sujet</button>
 
