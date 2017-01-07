@@ -1,7 +1,7 @@
 <h1>Episodes</h1>
 <ul>
   {{#each model as |episode|}}
-    <li>{{#link-to "episodes.show" 123}}{{episode.title}}{{/link-to}}</li>
+    <li>{{#link-to "episodes.show" episode.id}}{{episode.title}}{{/link-to}}</li>
   {{/each}}
 </ul>
 

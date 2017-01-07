@@ -1,6 +1,7 @@
-<h1>Episode</h1>
+<h1>{{model.title}}</h1>
 
 {{#each model.subjects as |subject|}}
   {{episode-subject subject=subject}}
 {{/each}}
-{{ model.title }}
+<button {{action 'addSubject' model}}>Ajouter un sujet</button>
+

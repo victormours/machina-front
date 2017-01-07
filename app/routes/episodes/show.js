@@ -1,17 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return {
-      subjects: [
-        {
-          title: "Actu"
-        },
-        {
-          title: "Enquête"
-        }
-      ],
-      title: "Episode exemple"
-    };
+  model(params) {
+    return this.get('store').findRecord('episode', params.episode_id);
+  },
+
+  actions: {
+    addSubject(episode){
+      var newSubject = {
+        episode: episode,
+        title: 'Nouveau sujet',
+      };
+      var subject = this.get('store').createRecord('subject', newSubject);
+      subject.save();
+    }
   }
+
 });

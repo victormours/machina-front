@@ -7,7 +7,10 @@ export default Ember.Route.extend({
 
   actions: {
     add(){
-      var episode = this.get('store').createRecord('episode', {title: 'Nouvel épisode'});
+      var newEpisode = {
+        title: 'Nouvel épisode'
+      };
+      var episode = this.get('store').createRecord('episode', newEpisode);
       episode.save();
     }
   }

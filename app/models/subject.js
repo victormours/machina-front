@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  subject: DS.attr(),
   title: DS.attr(),
-  subjects: DS.hasMany('subjects')
+  episode: DS.belongsTo('episode')
 });
