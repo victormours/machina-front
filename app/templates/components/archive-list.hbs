@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Sujet</th>
+    <th>Titre</th>
+    <th>Descriptif</th>
+    <th>Source</th>
+  </tr>
+  {{#each archives as |archive|}}
+    {{archive-line archive=archive}}
+  {{/each}}
+</table>
+
+
+<button {{action 'add'}}>Ajouter</button>
+
