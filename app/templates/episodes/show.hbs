@@ -1,7 +1,8 @@
-<h1>{{model.title}}</h1>
+<h1>{{soft-input content=model.title}}</h1>
 
 {{#each model.subjects as |subject|}}
   {{episode-subject subject=subject}}
 {{/each}}
 <button type="button" class="button" {{action 'addSubject' model}}>Ajouter un sujet</button>
+<button type="button" class="button" {{action 'save' model}}>Enregistrer</button>
 

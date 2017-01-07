@@ -13,6 +13,15 @@ export default Ember.Route.extend({
       };
       var subject = this.get('store').createRecord('subject', newSubject);
       subject.save();
+    },
+    save(episode){
+      episode.save();
+      episode.get('subjects').then((subjects) => {
+        subjects.forEach((subject) => {
+          subject.save();
+        });
+      });
+
     }
   }
 

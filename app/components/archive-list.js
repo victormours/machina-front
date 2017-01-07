@@ -11,8 +11,6 @@ export default Ember.Component.extend({
     },
     delete(archive) {
       return this.get('archives').removeObject(archive);
-
     }
-
   }
 });
