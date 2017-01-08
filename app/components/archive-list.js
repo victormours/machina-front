@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       archive.save();
     },
     delete(archive) {
-      return this.get('archives').removeObject(archive);
+      archive.destroyRecord();
     }
   }
 });

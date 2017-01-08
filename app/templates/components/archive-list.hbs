@@ -4,7 +4,12 @@
     <th>Media</th>
     <th>IN/OFF</th>
     <th>Descriptif</th>
+    <th>Début</th>
+    <th>Fin</th>
+    <th>Date</th>
     <th>Source</th>
+    <th>Frais techniques</th>
+    <th>Tarifs droits</th>
   </tr>
   {{#each archives as |archive|}}
     {{archive-line archive=archive delete-archive=(action 'delete' archive) }}
