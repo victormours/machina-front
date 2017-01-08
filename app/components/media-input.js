@@ -16,6 +16,7 @@ export default Ember.Component.extend({
       this.sendAction('willChangeAction', _selection);
 
       this.set('selection', _selection);
+      this.set('value', _selection.value);
 
       this.sendAction('didChangeAction', _selection);
     }
