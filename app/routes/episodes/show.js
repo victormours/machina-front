@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
   model(params) {
     return this.get('store').findRecord('episode', params.episode_id);
   },
@@ -19,6 +20,11 @@ export default Ember.Route.extend({
       episode.get('subjects').then((subjects) => {
         subjects.forEach((subject) => {
           subject.save();
+          subject.get('archives').then((archives) => {
+            archives.forEach((archive) => {
+              archive.save();
+            });
+          });
         });
       });
 

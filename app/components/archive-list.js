@@ -1,13 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  archives: [Ember.Object.create({title: 'Une photo'})],
+  store: Ember.inject.service(),
+
+  didReceiveAttrs() {
+    this._super(...arguments);
+    this.get('subject').get('archives').then((archives) => {
+      this.set('archives', archives);
+    });
+  },
 
   actions: {
     add(){
-      this
-        .get('archives')
-        .pushObject(Ember.Object.create({title: 'nouvelle archive'}));
+      var newArchive = { title: 'Une archive', subject: this.get('subject') };
+      var archive = this.get('store').createRecord('archive', newArchive);
+      archive.save();
     },
     delete(archive) {
       return this.get('archives').removeObject(archive);
