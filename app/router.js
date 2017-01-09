@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('episodes', function() {
     this.route('show', { path: "/:episode_id"});
   });
+  this.route('sources', function() {
+    this.route('show', { path: "/:source_id"});
+  });
 });
 
 export default Router;

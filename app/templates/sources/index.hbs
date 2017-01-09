@@ -1,0 +1,9 @@
+<h1>Sources</h1>
+<ul>
+  {{#each model as |source|}}
+    <li>{{#link-to "sources.show" source.id}}{{source.name}}{{/link-to}}</li>
+    {{/each}}
+</ul>
+
+<button type="button" class="button" {{action 'add'}}>Nouvelle source</button>
+
