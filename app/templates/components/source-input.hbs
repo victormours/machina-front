@@ -1,0 +1,6 @@
+{{input value=selectedSource.name key-up=(action 'autoComplete' selectedSource.name)}}
+<ul>
+  {{#each sources as |source|}}
+    <li><button class="button" {{action 'setSource' source}}>{{source.name}}</button></li>
+  {{/each}}
+</ul>

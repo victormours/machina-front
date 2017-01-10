@@ -6,6 +6,16 @@ export default Ember.Component.extend({
     {value: 'video', label: 'Video'},
   ],
 
+  didReceiveAttrs() {
+    var value = this.get('value');
+    if(value === 'video'){
+      let content = this.get('content');
+      let _selection = content[1];
+
+      this.set('selection', _selection);
+    }
+  },
+
   actions: {
     change: function () {
       let selectedIndex = this.$('select')[0].selectedIndex;
